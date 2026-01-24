@@ -1,0 +1,13 @@
+#!/bin/sh
+case "$1" in
+	start)
+		if cat /proc/cmdline | grep -q "mmcblk0p2"; then
+			ln -s /dev/mmcblk0p3 /dev/standby
+		else
+			ln -s /dev/mmcblk0p2 /dev/standby
+		fi
+		;;
+	*)
+		;;
+esac
+
