@@ -1,0 +1,51 @@
+image boot.vfat {
+	vfat {
+		files = {
+#BOOT_FILES#
+		}
+	}
+
+	size = 5M
+}
+
+image recovery.vfat {
+	vfat {
+		files = {
+			"RecoveryImage",
+			"extlinux"
+		}
+	}
+	size = 55M
+}
+
+image user.ext4 {
+	ext4 {}
+	size = 1M
+}
+
+image sdcard.img {
+	hdimage {
+	}
+
+	partition boot {
+		partition-type = 0xC
+		image = "boot.vfat"
+	}
+
+	partition recovery {
+		partition-type = 0xC
+		image = "recovery.vfat"
+	}
+
+	partition rootfs {
+		partition-type = 0x83
+		bootable = "true"
+		image = "rootfs.ext2"
+		size = 256M
+	}
+
+	partition user {
+		partition-type = 0x83
+		image = "user.ext4"
+	}
+}

@@ -1,0 +1,25 @@
+software =
+{
+	version = "1.0.0";
+	description = "Single-copy example";
+	images: (
+		{
+			filename = "recovery.vfat";
+			device = "/dev/mmcblk0p2";
+			sha256 = "RECOVERY_IMAGE_HASH";
+		},
+		{
+			filename = "rootfs.ext2.gz";
+			compressed = true;
+			device = "/dev/mmcblk0p3";
+			sha256 = "MAIN_IMAGE_HASH";
+		}
+	);
+	scripts: (
+		{
+			filename = "update_boot.sh";
+			type = "postinstall";
+			sha256 = "42c52c254460eca5072283935d0da47b287b27922d502c3f35c12f2d603c62b1";
+		}
+	);
+}
