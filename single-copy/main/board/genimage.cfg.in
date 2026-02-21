@@ -5,7 +5,7 @@ image boot.vfat {
 		}
 	}
 
-	size = 5M
+	size = 9M
 }
 
 image recovery.vfat {

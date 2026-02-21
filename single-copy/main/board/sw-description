@@ -19,7 +19,7 @@ software =
 		{
 			filename = "update_boot.sh";
 			type = "postinstall";
-			sha256 = "42c52c254460eca5072283935d0da47b287b27922d502c3f35c12f2d603c62b1";
+			sha256 = "9eb3ab8d3b79fb146252d6f9fdd357198b024e3d63defa5eafd520c4a747e5c5";
 		}
 	);
 }
